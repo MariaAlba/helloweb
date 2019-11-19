@@ -27,9 +27,13 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
+	//Se puede hacer un método doAction que puentee lo mismo a get que a post
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,17 +41,19 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		//recibir parametros del formulario siempre en formato String
+		//1. recibir parametros del formulario siempre en formato String
 		String nombre = request.getParameter("nombre");
 		String contrasena = request.getParameter("contrasena");
 		String idioma = request.getParameter("idioma");
 		String recuerdame = request.getParameter("recuerdame");
 		
-		//logica
+		//2. logica
+		String vista ="";
 		String bienvenida = "";
-		if(	nombre.equalsIgnoreCase("admin") 
+		if(	"admin".equalsIgnoreCase(nombre) 
 			&& 
-			contrasena.equalsIgnoreCase("admin")) {
+			"admin".equalsIgnoreCase(contrasena)
+			) {
 			
 			switch (idioma) {
 			case "cas":
@@ -71,15 +77,15 @@ public class LoginController extends HttpServlet {
 				break;
 			}
 			
-				
+			request.setAttribute("bienvenida", bienvenida);
+			vista ="login-exito.jsp";
 			
-			request.getRequestDispatcher("login-exito.jsp").forward(request, response);
 		}else {
 			request.setAttribute("mensaje", "Login incorrecto");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			vista ="login.jsp";
 		}
 	
-				
+		request.getRequestDispatcher(vista).forward(request, response);		
 				
 			
 		

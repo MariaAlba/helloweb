@@ -1,17 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
-</head>
-<body>
-	
-<%
-	String bienvenida = (String) request.getAttribute("recordar");
-%>
+<%@include file="includes/cabecera.jsp" %>
+<%@include file="includes/navegacion.jsp" %>
 
-<p><%=bienvenida %></p>
+<p>${bienvenida}</p>
+
 
 <a href="login.jsp">Volver</a>
-</body>
-</html>
+
+<%@include file="includes/pie.jsp"%>

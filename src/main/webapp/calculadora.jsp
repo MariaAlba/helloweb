@@ -1,4 +1,5 @@
-<a href="index.jsp">Volver</a>
+<%@include file="includes/cabecera.jsp" %>
+<%@include file="includes/navegacion.jsp" %>
 
 <h1>Calculadora</h1>
 
@@ -18,3 +19,5 @@
 	<input type="submit" value="Calcular">
 	
 </form>
+
+<%@include file="includes/pie.jsp"%>

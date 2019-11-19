@@ -1,10 +1,5 @@
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
-</head>
-<body>
+<%@include file="includes/cabecera.jsp" %>
+<%@include file="includes/navegacion.jsp" %>
 	<h1>Login</h1>
 	
 	<%
@@ -50,7 +45,6 @@
 	<input type="submit" value="Acceder" />
 	
 	</form>
-</body>
-</html>
 
 
+<%@include file="includes/pie.jsp"%>

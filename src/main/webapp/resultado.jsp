@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
-</head>
-<body>
+<%@include file="includes/cabecera.jsp" %>
+<%@include file="includes/navegacion.jsp" %>
+
 <h1>Resultado</h1>
 <%
 	//recibir atributos del controlador
@@ -32,8 +28,6 @@
 
 <a href="calculadora.jsp">Volver a calcular</a>
 	
-</body>
-</html>
 
-
+<%@include file="includes/pie.jsp"%>
 
