@@ -1,17 +1,19 @@
 <%@include file="includes/cabecera.jsp" %>
+<%@include file="includes/navegacion.jsp" %>
 
+<%-- hola
 
-	<div class="parallax">
-       <h1>Prueba Técnica</h1>
-       <h2>Welcome to HTML</h2>            
-     </div>
+<%
+	//java
+	for(int i = 0;i<3;i++){
+		out.print("<p>esto es java y se ejecuta en el servidor </p>");
+	}
+llll
+%> --%>
 
 <main>
 
-
-  	
-
-	<%@include file="includes/navegacion.jsp" %>
+  <div class="fondo">
         <h2> Alumnos Ipartek</h2>
         <p><a target="_blank" href="https://www.w3schools.com/html/html_tables.asp">Documentación w3 schools</a></p>
         <h3> Voluntario <span id="nombre">X</span></h3>
@@ -60,7 +62,7 @@
                 </tr>
             </tfoot>
         </table>
- 
+    </div>
 <a href="login.jsp">Login</a>
 <a href="calculadora.jsp">Calculadora</a>
 
@@ -68,7 +70,8 @@
 <a href="kaixo?nombre=pepe">Saludar a Pepe</a>
 <a href="kaixo?nombre=Maria">Saludar a Maria Antoñeta</a>
 
-</main>
+<p>Con esta </p>
 
+</main>
 
 <%@include file="includes/pie.jsp"%>

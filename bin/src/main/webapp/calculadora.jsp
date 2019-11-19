@@ -3,15 +3,7 @@
 
 <h1>Calculadora</h1>
 
-<%-- hola
 
-<%
-	//java
-	for(int i = 0;i<3;i++){
-		out.print("<p>esto es java y se ejecuta en el servidor </p>");
-	}
-llll
-%> --%>
 
 <form action="sumar" method="post">
 	<label for="operacion">Operación:</label> <br>
