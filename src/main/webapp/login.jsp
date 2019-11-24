@@ -1,6 +1,75 @@
+<%
+	String titulo = "Login";
+%>
+
 <%@include file="includes/cabecera.jsp" %>
 <%@include file="includes/navegacion.jsp" %>
-	<h1>Login</h1>
+
+<style>
+     
+        body {
+        
+            background: #56CCF2;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        form {
+            max-width:500px; ;
+            margin:2em auto;
+            border-radius: 5px;
+            box-shadow: #3598dc 0px 3px 3px;
+            padding: 2em;
+            background-color: white;
+        }
+        h1{
+            color:white;
+            margin:1em;
+        }
+            
+        input[type="text"],input[type="password"],select{
+            padding: 10px 0px 10px 10px;
+            width:70%;
+            background-color: #f2f2f2;
+            border:none;
+            border-radius: 3px;
+        }
+        input[type="text"],input[type="password"]:valid {
+            border:2px solid #9fc1f8; 
+        }
+        input[type="text"]:invalid,input[type="password"]{
+            border:2px solid rgba(255, 0, 0, 0.486); 
+        
+        } 
+        input[type="submit"]{
+            display: block;
+            margin:auto;
+            background-color: #3598dc;
+            color:white;
+            padding: 1em;
+            border: none;
+        }
+        
+        select{color:#777977;}
+        
+        select option{
+            padding: 5px;
+            line-height: 1em;
+        }
+        
+        .remember{color:#777977;font-size: 13.3333px;}
+        
+        #ver{
+            color: #239af9;
+            border: none;
+            background-color: transparent;
+            font-size: 15px;
+        }
+    </style>
+
+<main>
+
+<h1>Login</h1>
 	
 	<%
 		String mensaje = (String) request.getAttribute("mensaje");
@@ -10,6 +79,7 @@
 			<p ><%=mensaje%></p>
 		<%}
 	%>
+
 
 	<!-- el action lleva al servlet o controlador -->
 	<form action="login" method="POST">
@@ -45,6 +115,9 @@
 	<input type="submit" value="Acceder" />
 	
 	</form>
+</main>
+
+	
 
 
 <%@include file="includes/pie.jsp"%>

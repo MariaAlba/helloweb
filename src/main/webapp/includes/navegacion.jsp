@@ -20,6 +20,8 @@
 	    		<div class="dropdown-content">
 	      		 	<a href="ejercicios/css/animaciones.jsp">Animacion</a>
 					<a href="ejercicios/css/basico.jsp">CSS Básico</a>
+					<a href="ejercicios/css/especificidad.jsp">Especificidad</a>
+					<a href="ejercicios/css/selectores-avanzados.jsp">Selectores avanzados</a>
 					<a href="ejercicios/css/flexbox.jsp">Flexbox</a>
 					<a href="ejercicios/css/media-queries.jsp">Media Queries</a>
 	    		</div>
@@ -30,7 +32,7 @@
 	    		</button>
 	    		<div class="dropdown-content">
 	      			<a href="ejercicios/js/game.jsp">Arkanoid</a>
-					<a href="ejercicios/js/datatable.jsp">Datatable</a>
+					<a href="ejercicios/js/datatable.jsp">Datatables</a>
 	    		</div>
   			</div>
   			<div class="dropdown">
@@ -40,9 +42,9 @@
 	    		<div class="dropdown-content">
 	      			<a href="calculadora.jsp">Calculadora</a>	
 					<a href="login.jsp">Login</a>	
+					<a href="parametros-get.jsp">Urls</a>	
 					<a href="kaixo?nombre=pepe">Saludar a Pepe</a>
 					<a href="kaixo?nombre=Maria">Saludar a Maria Antonieta</a>
-					<a href="urls.jsp">Urls</a>	
 	    		</div>
   			</div>
   
@@ -65,5 +67,5 @@ function myFunction() {
 
 
 
-<main>
+
 

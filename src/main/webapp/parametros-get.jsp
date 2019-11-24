@@ -1,3 +1,6 @@
+<%
+	String titulo = "Parámetros por get";
+%>
 <%@include file="includes/cabecera.jsp"%>
 <%@include file="includes/navegacion.jsp" %>
 

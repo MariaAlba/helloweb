@@ -1,4 +1,4 @@
-</main>
+
 
 
 <div class="footer-wrapper">
@@ -13,7 +13,12 @@
 	</footer>
 </div>
 
-<!-- javascript -->
+<!--secion para los scripts -->
+
+<!-- datatables -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.20/b-1.6.1/r-2.2.3/datatables.min.js"></script>
+
+<!-- javascript principal -->
 <script src="js/main.js"></script>
 
 </body>

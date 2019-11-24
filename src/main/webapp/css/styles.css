@@ -19,16 +19,15 @@
 
 @import url("reset.css");
 @import url("normalize.css");
-@import url("etiquetas.css");
 @import url("animaciones.css");
+@import url("etiquetas.css");
 @import url("layouts.css");
-@import url("clases.css");
 @import url("navigation.css");
+@import url("clases.css");
 @import url("custom.css");
 
 @import url("impresora.css") print; /* solo para impresoras */
 
 
 /*movil*/
-
 
