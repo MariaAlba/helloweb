@@ -2,6 +2,7 @@
 <%@include file="includes/cabecera.jsp" %>
 <%@include file="includes/navegacion.jsp" %>
 
+<main>
 <h1>Calculadora</h1>
 
 <%-- hola
@@ -28,5 +29,6 @@ llll
 	<input type="submit" value="Calcular">
 	
 </form>
+</main>
 
 <%@include file="includes/pie.jsp"%>

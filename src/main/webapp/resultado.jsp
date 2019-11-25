@@ -1,7 +1,15 @@
+<%
+	String titulo = "Resultado";
+%>
 <%@include file="includes/cabecera.jsp" %>
 <%@include file="includes/navegacion.jsp" %>
 
+<main>
 <h1>Resultado</h1>
+<section>
+	<article>
+	
+	
 <%
 	//recibir atributos del controlador
 	float resultado = (float)request.getAttribute("resultado");
@@ -27,6 +35,9 @@
 	<% } %>
 
 <a href="calculadora.jsp">Volver a calcular</a>
+	</article>
+</section>
+</main>
 	
 
 <%@include file="includes/pie.jsp"%>
