@@ -20,7 +20,7 @@
 <h3> Voluntario <span id="nombre">X</span></h3>
 <p><button onclick="buscarVoluntario()">¿Quién lee?</button></p>
 
-<table id="ipartek" class="tabla">
+<table id="ipartek" class="tabla display">
 	<caption>Alumnos</caption>
     <thead></thead>
     <tbody>
@@ -93,10 +93,10 @@
          
         <script> 
 	         $(document).ready(function() { 
-	        	 $('.tabla').DataTable( { 
-	         	 	responsive: true	
-				} );
-	         } );
+	        	 
+	        	 $('.tabla').DataTable();
+	        	 
+	         });
         </script>
 
 <%@include file="includes/pie.jsp"%>
