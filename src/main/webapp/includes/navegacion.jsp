@@ -45,6 +45,7 @@
 					<a href="parametros-get.jsp">Urls</a>	
 					<a href="kaixo?nombre=pepe">Saludar a Pepe</a>
 					<a href="kaixo?nombre=Maria">Saludar a Maria Antonieta</a>
+					<a href="conversor.jsp">Conversor</a>
 	    		</div>
   			</div>
   
