@@ -48,6 +48,14 @@
 					<a href="conversor.jsp">Conversor</a>
 	    		</div>
   			</div>
+  			<div class="dropdown">
+	    		<button class="dropbtn">Ejercicios JSP
+	      			<i class="fa fa-caret-down"></i>
+	    		</button>
+	    		<div class="dropdown-content">
+	      			<a href="ejercicios/jsp/ahorcado.jsp">Ahorcado</a>	
+	    		</div>
+  			</div>
   
   			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div> 

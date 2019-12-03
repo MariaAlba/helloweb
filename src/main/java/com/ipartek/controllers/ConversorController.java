@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/convertir")
 public class ConversorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static final float METROS_PIES = 3.2808f;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -42,36 +43,37 @@ public class ConversorController extends HttpServlet {
 
 		// recibir parametros del formulario siempre en formato String
 		String metros = request.getParameter("metros");
-
-		Float ft = 0f;
+		float ft = 0f;
 		String msg = "";
 
-		// Logica de negocio => realizar calculos
+		try {
 
-		if ("".equals(metros.replace(',', '.'))) {
-			msg = "Por favor especifica los metros";
-		} else {
+			// logica de negocio
+			if ("".equals(metros.replace(',', '.'))) {
+				msg = "Por favor especifica los metros";
+			} else {
 
-			try {
-				ft = Float.parseFloat(metros.replace(',', '.')) * 3.2808f;
-			} catch (NumberFormatException ex) {
-				msg = "Solo puede calcular números";
-			} catch (ArithmeticException ex) {
-				msg = "No puede dividir entre 0";
-			} catch (Exception e) {
-				msg = "Se ha producido una excepción";
+				ft = Float.parseFloat(metros.replace(',', '.')) * METROS_PIES;
+
+				// enviar datos a la vista
+
+				request.setAttribute("ft", ft);
 			}
 
-			// enviar datos a la vista
-
-			request.setAttribute("metros", metros);
-			request.setAttribute("ft", ft);
-
+		} catch (NumberFormatException ex) {
+			msg = "Solo puede calcular números";
+		} catch (ArithmeticException ex) {
+			msg = "No puede dividir entre 0";
+		} catch (Exception e) {
+			request.setAttribute("mensaje", "Perdón pero tenemos un fallo.");
 		}
 
-		request.setAttribute("msg", msg);
-		// ir a vista
-		request.getRequestDispatcher("conversor.jsp").forward(request, response);
+		finally {
+			// ir a vista
+			request.setAttribute("msg", msg);
+			request.setAttribute("metros", metros);
+			request.getRequestDispatcher("conversor.jsp").forward(request, response);
+		}
 
 	}
 
