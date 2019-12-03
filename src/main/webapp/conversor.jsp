@@ -8,7 +8,10 @@
 
 <form action="convertir" method="post">
 	<label for="metros">Nº de metros:</label> <br><br>
-	<input type="text" autofocus required id="metros" name="metros" placeholder="Metros a convertir"><br>
+	<p>${msg}</p>
+	<input type="text" autofocus required id="metros" name="metros" placeholder="Metros a convertir"><br><br>
+	
+	<input type="text" autofocus required id="ft" name="ft" value="${ft == null ? 0 : ft}"><br>
 	<small>Convertir de metros a pies</small>
 	<br><br>
 
@@ -30,11 +33,12 @@
 		<% 
 	}
 	
+	//${resultado}
 	
 %>
 
 
-	
+	<p style="color:green"> Resultado abreviado: ${ft}</p>
 
 
 

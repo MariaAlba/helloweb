@@ -43,27 +43,33 @@ public class ConversorController extends HttpServlet {
 		// recibir parametros del formulario siempre en formato String
 		String metros = request.getParameter("metros");
 
-		Float resultado = 35f;
 		Float ft = 0f;
 		String msg = "";
 
-		// realizar calculos
-		try {
-			ft = Float.parseFloat(metros) * 3.2808f;
-		} catch (NumberFormatException ex) {
-			msg = "Solo puede calcular números";
-		} catch (ArithmeticException ex) {
-			msg = "No puede dividir entre 0";
-		} catch (Exception e) {
-			msg = "Se ha producido una excepción";
+		// Logica de negocio => realizar calculos
+
+		if ("".equals(metros.replace(',', '.'))) {
+			msg = "Por favor especifica los metros";
+		} else {
+
+			try {
+				ft = Float.parseFloat(metros.replace(',', '.')) * 3.2808f;
+			} catch (NumberFormatException ex) {
+				msg = "Solo puede calcular números";
+			} catch (ArithmeticException ex) {
+				msg = "No puede dividir entre 0";
+			} catch (Exception e) {
+				msg = "Se ha producido una excepción";
+			}
+
+			// enviar datos a la vista
+
+			request.setAttribute("metros", metros);
+			request.setAttribute("ft", ft);
+
 		}
 
-		// enviar datos a la vista
-
-		request.setAttribute("metros", metros);
-		request.setAttribute("ft", ft);
 		request.setAttribute("msg", msg);
-
 		// ir a vista
 		request.getRequestDispatcher("conversor.jsp").forward(request, response);
 
