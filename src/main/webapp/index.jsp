@@ -13,7 +13,7 @@
 
 <div class="parallax">
 	<h1>Prueba Técnica</h1>
-	<h2>Welcome to HTML</h2>
+	<h2>Idea Feliz</h2>
 </div>
 
 <%@include file="includes/navegacion.jsp"%>
