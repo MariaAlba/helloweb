@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloControler
+ * Servlet implementation class HelloControler Ejemplo para aprender a recibir
+ * peticiones del cliente y resolverlos solo usando servlets
+ * 
+ * @see HElloController2 para ver como se hace con servlet + jsp
  */
 @WebServlet("/ejemplo1")
 public class HelloControler extends HttpServlet {

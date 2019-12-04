@@ -77,6 +77,7 @@ section{
     border:1px solid rgb(206, 205, 205);
     border-radius:2px;
 	margin: 3em auto;
+	padding:2em;
     -webkit-box-shadow: 13px 20px 31px -13px rgba(0,0,0,0.75);
     -moz-box-shadow: 13px 20px 31px -13px rgba(0,0,0,0.75);
     box-shadow: 13px 20px 31px -13px rgba(0,0,0,0.75);
