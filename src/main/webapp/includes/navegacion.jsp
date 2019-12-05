@@ -53,9 +53,8 @@
 	      			<i class="fa fa-caret-down"></i>
 	    		</button>
 	    		<div class="dropdown-content">
-	      			<a href="ejercicios/jsp/ahorcado.jsp">Ahorcado</a>	
-	      			<a href="ejemplo2">Resumen sin permiso</a>	
-	      			<a href="ejemplo2?nombre=admin&password=123456">Resumen con permiso</a>	
+	      			<a href="jsp/ejercicios/ejemplo2">Servlet con JSP</a>	
+	      			<a href="ejemplo1?nombre=admin&password=123456">Resumen con permiso</a>	
 	      			<a href="ejemplo2?nombre=tetera">Tetera</a>
 	    		</div>
   			</div>
