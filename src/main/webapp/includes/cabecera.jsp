@@ -37,35 +37,7 @@
 <body id="#top">
 
 	<section id="usuario">
-		<%
-			String usuario = (String) session.getAttribute("usuarioLogeado");
-		%>
-		<%
-			String idioma = (String) session.getAttribute("idioma");
-		%>
-
-		<%
-			if (usuario == null) {
-		%>
-		<p>
-			No esta logeado. Vaya a <a href="login.jsp"> login</a>
-		</p>
-
-		<%
-			} else {
-		%>
-		<p>
-			Usuario:
-			<%=usuario%></p>
-		<p>
-			Idioma:
-			<%=idioma%></p>
-			
-			
-
-		<%
-			}
-		%>
+	
 
 
 
