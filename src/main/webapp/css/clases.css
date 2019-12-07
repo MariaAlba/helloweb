@@ -58,3 +58,8 @@
 	background-color: transparent;
 	heigth: 500px;
 }
+
+section.login{
+	text-align:center;
+	color:red;
+}

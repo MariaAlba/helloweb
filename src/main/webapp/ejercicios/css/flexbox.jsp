@@ -15,7 +15,7 @@
 				<li><a href="https://flexboxfroggy.com/" target=_blank >Juego Flexbox</a> </li>
 				<li><a href="http://www.falconmasters.com/web-design/sitio-web-layout-flexbox/" target=_blank >Maquetar Web con Flexbox</a> </li>	
 			</ul>
-			<p>Flex es una nueva forma de <code>dispaly</code> de CSS3 totalmente nueva, para que las cajas no sean inline o block. Se comportarán de una forma mucho más flexible.</p>
+			<p>Flex es una nueva forma de <code>display</code> de CSS3 totalmente nueva, para que las cajas no sean inline o block. Se comportarán de una forma mucho más flexible.</p>
 			<p>Sirve para distribuir los elementos contenidos (hijos) en una etiqueta (contenedor) con <code>display:flex</code></p>
 		</Section>
 		

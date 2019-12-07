@@ -7,7 +7,8 @@
    
        <h1>Datatables</h1>
        <a href="https://datatables.net/" target="_blank">Documentación oficial</a>
-       
+       <main>
+     
        <section>
        		<p>Plugin de JS para dar estilos y funcionalidad a las tablas de HTML.</p>
        		<p>Este plugin nos permite ordenar columnas, filtar por textos, paginación, rwd y muchas cosas mas</p>
@@ -520,6 +521,6 @@
             </tr>
         </tfoot>
     </table>
-
+  </main>
    
 <%@include file="/includes/pie.jsp" %>

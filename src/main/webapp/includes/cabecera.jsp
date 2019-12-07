@@ -35,10 +35,3 @@
 </head>
 
 <body id="#top">
-
-	<section id="usuario">
-	
-
-
-
-	</section>

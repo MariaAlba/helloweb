@@ -52,50 +52,37 @@
 					Ejercicios JSP <i class="fa fa-caret-down"></i>
 				</button>
 				<div class="dropdown-content">
-					<a href="jsp/ejercicios/ejemplo2">Servlet con JSP</a> <a
+					<a href="ejemplo2">Servlet con JSP</a> <a
 						href="ejemplo1?nombre=admin&password=123456">Resumen con
 						permiso</a> <a href="ejemplo2?nombre=tetera">Tetera</a>
 				</div>
 			</div>
+			<%
+				String usuario = (String) session.getAttribute("usuarioLogeado");
+				String idioma = (String) session.getAttribute("idioma");
+			%>
 
-			<div class="dropdown" id="login">
-				<%
-					String usuario = (String) session.getAttribute("usuarioLogeado");
-				%>
-				<%
-					String idioma = (String) session.getAttribute("idioma");
-				%>
+			<%
+				if (usuario == null) {
+			%>
+
+			<a id="#login" href="login.jsp"> Inicie sesión</a>
+
+			<%
+				} else {
+			%>
+			<div class="dropdown">
 				<button class="dropbtn">
-
-
-					<%
-						if (usuario == null) {
-					%>
-
-					<a href="login.jsp"> Inicie sesión</a>
-
-
-					<%
-						} else {
-					%>
-					<p>
-						Usuario:
-						<%=usuario%></p>
-					<p>
-						Idioma:
-						<%=idioma%></p>
-
-					<p>
-						<a href="logout">Cerrar sesión</a>
-					</p>
-
-					<%
-						}
-					%>
-
-
+					 <%=usuario%>
 				</button>
+				<div class="dropdown-content">
+					<a href="logout">Cerrar sesión</a>
+				</div>
 			</div>
+			<%
+				}
+			%>
+
 
 
 

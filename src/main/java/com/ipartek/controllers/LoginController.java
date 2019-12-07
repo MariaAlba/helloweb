@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String USER = "admin";
+	private static final String PASS = "admin";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -55,7 +57,7 @@ public class LoginController extends HttpServlet {
 		// 2. logica
 		String vista = "";
 		String bienvenida = "";
-		if ("admin".equalsIgnoreCase(nombre) && "admin".equalsIgnoreCase(contrasena)) {
+		if (USER.equalsIgnoreCase(nombre) && PASS.equalsIgnoreCase(contrasena)) {
 
 			switch (idioma) {
 			case "cas":
