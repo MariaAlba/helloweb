@@ -87,6 +87,18 @@ public class LoginController extends HttpServlet {
 			session.setMaxInactiveInterval(-1); // nunca caduca
 //			session.setMaxInactiveInterval(5); // nunca caduca
 
+			// si el usuario en sesion => recuperar del ambito de sesion los usuarios
+			// y añadir el nuevo usuario
+			// ServletContext == applicationScope en JSP
+			// ServletContext applicationScope = request.getServletContext();
+
+			// int numeroUsuarios = (int)
+			// ((applicationScope.getAttribute("numeroUsuariosConectados") == null) ? 0
+			// : applicationScope.getAttribute("numeroUsuariosConectados"));
+//			int numeroUsuarios = (int) applicationScope.getAttribute("numeroUsuariosConectados");
+//			numeroUsuarios++;
+//			applicationScope.setAttribute("numeroUsuariosConectados", numeroUsuarios);
+
 			request.setAttribute("bienvenida", bienvenida);
 			vista = "login-exito.jsp";
 

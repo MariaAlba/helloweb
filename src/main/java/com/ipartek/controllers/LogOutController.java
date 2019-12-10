@@ -32,7 +32,18 @@ public class LogOutController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		// si el usuario en sesion => recuperar del ambito de sesion los usuarios
+		// y añadir el nuevo usuario
+		// ServletContext == applicationScope en JSP
+//		ServletContext applicationScope = request.getServletContext();
+//
+//		int numeroUsuarios = (int) ((applicationScope.getAttribute("numeroUsuariosConectados") == null) ? 0
+//				: applicationScope.getAttribute("numeroUsuariosConectados"));
+//		numeroUsuarios--;
+//		applicationScope.setAttribute("numeroUsuariosConectados", numeroUsuarios);
+
 		HttpSession session = request.getSession();
+		session.removeAttribute("usuarioLogeado");
 		session.invalidate();
 		session = null;
 
