@@ -76,6 +76,7 @@
 					 <%=usuario%>
 				</button>
 				<div class="dropdown-content">
+					<a href="private/home">BackOffice</a>
 					<a href="logout">Cerrar sesión</a>
 				</div>
 			</div>
