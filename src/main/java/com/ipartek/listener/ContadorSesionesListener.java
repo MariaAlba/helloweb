@@ -23,11 +23,16 @@ public class ContadorSesionesListener implements HttpSessionAttributeListener {
 
 		LOG.debug("attributeAdded " + event.getName() + " " + event.getValue());
 
-		ServletContext sc = event.getSession().getServletContext();
-		int numeroUsuarios = (int) sc.getAttribute("numeroUsuariosConectados");
-		if (event.getName() == "usuarioLogeado") {
+		if ("usuarioLogeado".equals(event.getName())) {
+
+			ServletContext sc = event.getSession().getServletContext();
+
+			int numeroUsuarios = (int) sc.getAttribute("numeroUsuariosConectados");
+
+			// sc.setAttribute("numeroUsuariosConectados", ++numeroUsuarios);
 
 			numeroUsuarios++;
+
 			sc.setAttribute("numeroUsuariosConectados", numeroUsuarios);
 		}
 	}
@@ -38,12 +43,17 @@ public class ContadorSesionesListener implements HttpSessionAttributeListener {
 	public void attributeRemoved(HttpSessionBindingEvent event) {
 
 		LOG.debug("attributeRemoved " + event.getName() + " " + event.getValue());
-		ServletContext sc = event.getSession().getServletContext();
-		int numeroUsuarios = (int) sc.getAttribute("numeroUsuariosConectados");
-		if (event.getName() == "usuarioLogeado") {
+
+		if ("usuarioLogeado".equals(event.getName())) {
+
+			ServletContext sc = event.getSession().getServletContext();
+
+			int numeroUsuarios = (int) sc.getAttribute("numeroUsuariosConectados");
 
 			numeroUsuarios--;
+
 			sc.setAttribute("numeroUsuariosConectados", numeroUsuarios);
+
 		}
 	}
 
@@ -53,9 +63,9 @@ public class ContadorSesionesListener implements HttpSessionAttributeListener {
 	public void attributeReplaced(HttpSessionBindingEvent event) {
 
 		LOG.debug("attributeReplaced " + event.getName() + " " + event.getValue());
-		ServletContext sc = event.getSession().getServletContext();
-		int numeroUsuarios = (int) sc.getAttribute("numeroUsuariosConectados");
-		if (event.getName() == "usuarioLogeado") {
+		if ("usuarioLogeado".equals(event.getName())) {
+			ServletContext sc = event.getSession().getServletContext();
+			int numeroUsuarios = (int) sc.getAttribute("numeroUsuariosConectados");
 			sc.setAttribute("numeroUsuariosConectados", numeroUsuarios);
 		}
 	}
