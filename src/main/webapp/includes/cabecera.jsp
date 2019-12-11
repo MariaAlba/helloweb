@@ -15,7 +15,7 @@
 <title><%=titulo%></title>
 
 <!-- la base para construir todas las rutas de esta pagina -->
-<base href="/helloweb/">
+<base href="${pageContext.request.contextPath }/">
 
 <!-- favicon -->
 <link rel="icon" href="images/favicon.png" sizes="16x16"
@@ -43,5 +43,6 @@
 <body id="#top">
 
 <p>
+<b>${pageContext.request.contextPath }</b>
 Usuarios conectados : ${applicationScope.numeroUsuariosConectados}
 </p>

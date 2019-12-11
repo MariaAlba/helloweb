@@ -1,6 +1,8 @@
 package com.ipartek.controllers;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +51,10 @@ public class LogOutController extends HttpServlet {
 
 //		request.getRequestDispatcher("index.jsp").forward(request, response);
 
-		response.sendRedirect("index.jsp");
+		String mensaje = "Gracias por visitarnos";
+		String base = request.getContextPath();
+		response.sendRedirect(
+				base + "/login.jsp?mensaje=" + URLEncoder.encode(mensaje, StandardCharsets.UTF_8.toString()));
 
 	}
 

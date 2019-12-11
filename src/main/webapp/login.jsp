@@ -90,6 +90,7 @@ select option {
 		}
 	%>
 
+<%if(mensaje == null) %>
 
 	<!-- el action lleva al servlet o controlador -->
 	<form action="login" method="POST">
@@ -113,6 +114,11 @@ select option {
 		<br /> <input type="submit" value="Acceder" />
 
 	</form>
+	
+	<section>
+		<p>Intenta acceder sin hacer login</p>
+		<a href="private/home?usuarioLogeado=admin">Backoffice sin permiso</a>
+	</section>
 </main>
 
 <script>
