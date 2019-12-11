@@ -1,4 +1,4 @@
-
+<%@page errorPage="error.jsp" %>
 <%
 	String titulo = "Login";
 %>
@@ -79,8 +79,11 @@ select option {
 <main>
 
 	<h1>Login</h1>
+	
 
 	<%
+	Object o = null;
+	o.toString();
 		String mensaje = (String) request.getAttribute("mensaje");
 
 		if (mensaje != null) {
