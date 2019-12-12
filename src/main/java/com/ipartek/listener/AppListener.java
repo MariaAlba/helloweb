@@ -34,6 +34,7 @@ public class AppListener implements ServletContextListener {
 		// sc = application scope
 		ServletContext sc = sce.getServletContext();
 		sc.setAttribute("numeroUsuariosConectados", 0);
+		sc.setAttribute("numeroUsuariosIndebidos", 0);
 	}
 
 }

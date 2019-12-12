@@ -1,11 +1,13 @@
 package com.ipartek.controllers.filter;
 
 import java.io.IOException;
+import java.util.HashSet;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -50,9 +52,26 @@ public class SeguridadFilter implements Filter {
 		LOG.debug("doFilter REMOTEADDRESS: " + req.getRemoteAddr());
 		LOG.debug("doFilter REMOTEHOST: " + req.getRemoteHost());
 
+		/*
+		 * se inicializa la variable en com.ipartek.listener.appListener
+		 */
+		ServletContext sc = req.getServletContext(); // application context rn jsp
+		int numeroUsuariosIndebidos = (int) sc.getAttribute("numeroUsuariosIndebidos");
+
 		HttpSession session = req.getSession();
 		if (session.getAttribute("usuarioLogeado") == null) {
+
 			LOG.warn("Intentan entrar sin logearse");
+
+			// Actualizar contador
+			sc.setAttribute("numeroUsuariosIndebidos", ++numeroUsuariosIndebidos);
+
+			// Guardar IP
+			HashSet<String> ips = (HashSet<String>) sc.getAttribute("ips");
+			String ipCliente = req.getRemoteHost();
+			ips.add(ipCliente);
+			sc.setAttribute("ips", ips);
+
 		} else {
 			// dejamos continuar
 			// pass the request along the filter chain
@@ -65,7 +84,9 @@ public class SeguridadFilter implements Filter {
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		LOG.trace("init");
-
+		ServletContext sc = fConfig.getServletContext();
+		fConfig.getServletContext().setAttribute("numeroUsuariosIndebidos", 0);
+		fConfig.getServletContext().setAttribute("ips", new HashSet<String>());
 	}
 
 }

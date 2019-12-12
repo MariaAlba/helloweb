@@ -82,8 +82,8 @@ select option {
 	
 
 	<%
-	Object o = null;
-	o.toString();
+	/* Object o = null;
+	o.toString(); */
 		String mensaje = (String) request.getAttribute("mensaje");
 
 		if (mensaje != null) {
