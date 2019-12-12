@@ -61,12 +61,12 @@ select option {
 	
 	
 		<label for="nombre">Nombre</label><br>
-		<input type="text" name="nombre" id="nombre" required pattern=".{1,100}"/>
+		<input type="text" name="nombre" id="nombre" value="${nombre}" required pattern=".{1,100}"/>
 		
 		<br /><br />
 		
 		<label for="email">Email</label><br>
-		<input type="email" name="email" id="email" required/>
+		<input type="email" name="email" id="email" value="${email}" required/>
 		
 		<br /><br />
 		
@@ -82,6 +82,12 @@ select option {
 		<input type="checkbox" name="deportes" value="Yoga" /> Yoga
 		<br /> <br />
 		
+		<!-- Con el HashMap que hemos creado en el listener AppListener -->
+	 
+	 <%-- 	<c:forEach items="${hmDeportes}" var="dep">
+			<input type="checkbox" name="deportes" value="${dep.key}" /> ${dep.value}
+			<br /><br />
+		</c:forEach> --%>
 	
 		<input type="submit" value="Continuar" class="boton"/>
 	

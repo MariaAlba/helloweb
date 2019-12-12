@@ -1,6 +1,7 @@
 package com.ipartek.controllers;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/register")
 public class RegistroController extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -52,7 +54,8 @@ public class RegistroController extends HttpServlet {
 		}
 
 		if (mensaje != "") {
-
+			request.setAttribute("nombre", nombre);
+			request.setAttribute("email", email);
 			request.setAttribute("mensaje", mensaje);
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 
@@ -60,7 +63,7 @@ public class RegistroController extends HttpServlet {
 			// Pasar atributos
 			request.setAttribute("nombre", nombre);
 			request.setAttribute("email", email);
-			request.setAttribute("deportes", deportes);
+			request.setAttribute("deportesMarcados", Arrays.toString(deportes));
 			request.getRequestDispatcher("registro-exito.jsp").forward(request, response);
 
 		}

@@ -1,5 +1,7 @@
 package com.ipartek.listener;
 
+import java.util.HashMap;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -35,6 +37,15 @@ public class AppListener implements ServletContextListener {
 		ServletContext sc = sce.getServletContext();
 		sc.setAttribute("numeroUsuariosConectados", 0);
 		sc.setAttribute("numeroUsuariosIndebidos", 0);
+
+		//
+		HashMap<String, String> hmDeportes = new HashMap<String, String>();
+		hmDeportes.put("1", "Surf");
+		hmDeportes.put("2", "Quidditch");
+		hmDeportes.put("33", "Yoga");
+		hmDeportes.put("76", "Escalada");
+		hmDeportes.put("23", "Dormir");
+		sc.setAttribute("hmDeportes", hmDeportes);
 	}
 
 }
