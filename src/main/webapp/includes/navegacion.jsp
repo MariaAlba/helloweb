@@ -10,8 +10,8 @@
 				<div class="dropdown-content">
 					<a href="ejercicios/html/etiquetas-basicas.jsp">Etiquetas
 						básicas</a> <a href="ejercicios/html/box-model.jsp">Visualización</a>
-					<a href="ejercicios/html/posicionamiento.jsp">Posicionamiento</a> <a
-						href="ejercicios/html/formulario.jsp">Formulario</a>
+					<a href="ejercicios/html/posicionamiento.jsp">Posicionamiento</a> 
+					<a href="ejercicios/html/formulario.jsp">Formulario</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -52,9 +52,10 @@
 					Ejercicios JSP <i class="fa fa-caret-down"></i>
 				</button>
 				<div class="dropdown-content">
-					<a href="ejemplo2">Servlet con JSP</a> <a
-						href="ejemplo1?nombre=admin&password=123456">Resumen con
+					<a href="ejemplo2">Servlet con JSP</a> 
+					<a href="ejemplo1?nombre=admin&password=123456">Resumen con
 						permiso</a> <a href="ejemplo2?nombre=tetera">Tetera</a>
+						<a href="register.jsp">Formulario registro</a> 
 				</div>
 			</div>
 			<%

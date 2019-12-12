@@ -60,18 +60,19 @@ public class SeguridadFilter implements Filter {
 
 		HttpSession session = req.getSession();
 		if (session.getAttribute("usuarioLogeado") == null) {
-
+			
 			LOG.warn("Intentan entrar sin logearse");
-
-			// Actualizar contador
+			
+			//Actualizar contador
 			sc.setAttribute("numeroUsuariosIndebidos", ++numeroUsuariosIndebidos);
-
-			// Guardar IP
-			HashSet<String> ips = (HashSet<String>) sc.getAttribute("ips");
+			
+			
+			//Guardar IP
+			HashSet<String>ips = (HashSet<String>)sc.getAttribute("ips");
 			String ipCliente = req.getRemoteHost();
 			ips.add(ipCliente);
 			sc.setAttribute("ips", ips);
-
+			
 		} else {
 			// dejamos continuar
 			// pass the request along the filter chain
