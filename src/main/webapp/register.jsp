@@ -61,17 +61,28 @@ select option {
 	
 	
 		<label for="nombre">Nombre</label><br>
-		<input type="text" name="nombre" id="nombre" value="${nombre}" required pattern=".{1,100}"/>
+		<input type="text" name="nombre" id="nombre" value="${nombre}" />
 		
 		<br /><br />
 		
 		<label for="email">Email</label><br>
-		<input type="email" name="email" id="email" value="${email}" required/>
+		<input type="text" name="email" id="email" value="${email}" />
+		
+		<br /><br />
+		
+		<p>${genero }</p>
+		
+		<label for="genero">Género</label><br>
+		<select name="genero" id="genero">
+			<option value="H" ${(genero eq "H")?"selected":"" }>Hombre</option>
+			<option value="M" ${(genero eq "M")?"selected":"" }> Mujer</option>
+			<option value="I" ${(genero eq 'I')?"selected":"" }>No binario</option>
+		</select>
 		
 		<br /><br />
 		
 		<label for="deportes">Elije por lo menos 3 deportes:</label><br><br>
-		<input type="checkbox" name="deportes" value="Quiditch"/> Quidditch
+		<!-- <input type="checkbox" name="deportes" value="Quiditch"/> Quidditch
 		<br /><br />
 		<input type="checkbox" name="deportes" value="Jagger" /> Jagger
 		<br /> <br />
@@ -80,14 +91,15 @@ select option {
 		<input type="checkbox" name="deportes" value="Escalada" /> Escalada
 		<br /> <br />
 		<input type="checkbox" name="deportes" value="Yoga" /> Yoga
-		<br /> <br />
+		<br /> <br /> -->
 		
-		<!-- Con el HashMap que hemos creado en el listener AppListener -->
-	 
-	 <%-- 	<c:forEach items="${hmDeportes}" var="dep">
+		<!-- Con el HashMap que hemos creado en el listener AppListener -->	 
+	 	 <c:forEach items="${hmDeportes}" var="dep">
 			<input type="checkbox" name="deportes" value="${dep.key}" /> ${dep.value}
 			<br /><br />
-		</c:forEach> --%>
+		</c:forEach> 
+		
+		
 	
 		<input type="submit" value="Continuar" class="boton"/>
 	

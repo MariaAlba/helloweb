@@ -1,7 +1,8 @@
 package com.ipartek.controllers;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,10 +34,28 @@ public class RegistroController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		ArrayList<String> deportesElegidos = new ArrayList<String>();
+		HashMap<String, String> hmDeportes = (HashMap<String, String>) request.getServletContext()
+				.getAttribute("hmDeportes");
+
 		// Recoger parámetros
 		String nombre = (String) request.getParameter("nombre");
 		String email = request.getParameter("email");
 		String[] deportes = request.getParameterValues("deportes");
+		String genero = request.getParameter("genero");
+
+		String generoValor = "";
+		switch (genero) {
+		case "H":
+			generoValor = "Hombre";
+			break;
+		case "M":
+			generoValor = "Mujer";
+			break;
+		case "I":
+			generoValor = "No binario";
+			break;
+		}
 
 		String mensaje = "";
 
@@ -57,13 +76,24 @@ public class RegistroController extends HttpServlet {
 			request.setAttribute("nombre", nombre);
 			request.setAttribute("email", email);
 			request.setAttribute("mensaje", mensaje);
+			request.setAttribute("genero", genero);
+
+			// deportes elegidos anteriormente
+
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 
 		} else {
 			// Pasar atributos
+
+			for (String deporteKey : deportes) {
+				deportesElegidos.add(hmDeportes.get(deporteKey));
+			}
+
 			request.setAttribute("nombre", nombre);
 			request.setAttribute("email", email);
-			request.setAttribute("deportesMarcados", Arrays.toString(deportes));
+			request.setAttribute("genero", generoValor);
+			request.setAttribute("deportesMarcados", deportesElegidos);
+
 			request.getRequestDispatcher("registro-exito.jsp").forward(request, response);
 
 		}
