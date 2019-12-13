@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 /**
  * Servlet implementation class RegistroController
  */
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistroController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private static final Logger LOG = Logger.getLogger(RegistroController.class);
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -57,45 +60,55 @@ public class RegistroController extends HttpServlet {
 			break;
 		}
 
-		String mensaje = "";
+		try {
 
-		// Validar y lógica negocio
-		if (nombre.isEmpty()) {
-			mensaje += " El nombre de usuario no puede ir vacío.";
-		}
-		if (!email.matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$")) {
-			mensaje += " El formato de email es incorrecto.";
-		}
-		if (deportes == null) {
-			mensaje += " Debe elegir al menos 3 deportes.";
-		} else if (deportes.length < 3) {
-			mensaje += " Debe elegir al menos 3 deportes.";
-		}
+			// Validar y lógica negocio
 
-		if (mensaje != "") {
-			request.setAttribute("nombre", nombre);
-			request.setAttribute("email", email);
-			request.setAttribute("mensaje", mensaje);
-			request.setAttribute("genero", genero);
+			String mensaje = "";
 
-			// deportes elegidos anteriormente
-
-			request.getRequestDispatcher("register.jsp").forward(request, response);
-
-		} else {
-			// Pasar atributos
-
-			for (String deporteKey : deportes) {
-				deportesElegidos.add(hmDeportes.get(deporteKey));
+			if (nombre == null || nombre.isEmpty()) {
+				mensaje += " El nombre de usuario no puede ir vacío.";
+			}
+			if (email == null
+					|| !email.matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$")) {
+				mensaje += " El formato de email es incorrecto.";
+			}
+			if (deportes == null || deportes.length < 3) {
+				mensaje += " Debe elegir al menos 3 deportes.";
 			}
 
-			request.setAttribute("nombre", nombre);
-			request.setAttribute("email", email);
-			request.setAttribute("genero", generoValor);
-			request.setAttribute("deportesMarcados", deportesElegidos);
+			if (mensaje != "") {
+				request.setAttribute("nombre", nombre);
+				request.setAttribute("email", email);
+				request.setAttribute("mensaje", mensaje);
+				request.setAttribute("genero", genero);
 
-			request.getRequestDispatcher("registro-exito.jsp").forward(request, response);
+				// TODO deportes elegidos anteriormente
+				request.setAttribute("todosDeportes", hmDeportes);
 
+				for (String deporteKey : deportes) {
+					deportesElegidos.add(hmDeportes.get(deporteKey));
+				}
+
+				request.setAttribute("deportesMarcados", deportesElegidos);
+
+			} else {
+				// Pasar atributos
+
+				for (String deporteKey : deportes) {
+					deportesElegidos.add(hmDeportes.get(deporteKey));
+				}
+
+				request.setAttribute("nombre", nombre);
+				request.setAttribute("email", email);
+				request.setAttribute("genero", generoValor);
+				request.setAttribute("deportesMarcados", deportesElegidos);
+
+				request.getRequestDispatcher("registro-exito.jsp").forward(request, response);
+
+			}
+		} catch (Exception e) {
+			LOG.error(e);
 		}
 
 	}

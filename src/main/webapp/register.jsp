@@ -70,13 +70,12 @@ select option {
 		
 		<br /><br />
 		
-		<p>${genero }</p>
-		
 		<label for="genero">Género</label><br>
 		<select name="genero" id="genero">
-			<option value="H" ${(genero eq "H")?"selected":"" }>Hombre</option>
-			<option value="M" ${(genero eq "M")?"selected":"" }> Mujer</option>
-			<option value="I" ${(genero eq 'I')?"selected":"" }>No binario</option>
+		  	<option value="">-- Selecciona --</option>
+			<option value="H" ${(genero eq "H")?"selected":"" }> Hombre </option>
+			<option value="M" ${(genero eq "M")?"selected":"" }> Mujer </option>
+			<option value="I" ${((genero eq 'I') or (empty genero))?"selected":"" }> No binario </option>
 		</select>
 		
 		<br /><br />
